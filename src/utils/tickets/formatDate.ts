@@ -21,5 +21,8 @@ function convertToISO(date: string) {
 }
 
 function formatWeekday(wd: string) {
-  return `${wd.charAt(0).toUpperCase()}${wd.charAt(1)}`;
+  let startIdx = 0;
+  /* IE 11 */
+  if (wd.charCodeAt(0) === 8206) startIdx = 1;
+  return `${wd.charAt(startIdx).toUpperCase()}${wd.charAt(startIdx + 1)}`;
 }
