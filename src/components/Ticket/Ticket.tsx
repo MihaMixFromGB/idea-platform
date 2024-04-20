@@ -17,6 +17,7 @@ const Ticket: React.FC<TicketProps> = ({ ticket }) => {
   const currency = convertCurrency(price, selectedCurrency);
   return (
     <Paper
+      component="article"
       className="ticket"
       elevation={2}
       sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}

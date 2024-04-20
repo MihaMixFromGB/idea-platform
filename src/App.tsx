@@ -1,18 +1,14 @@
 import { Box } from "@mui/material";
-import Logo from "./components/Logo";
+import Header from "./components/Header";
 import Toolbar from "./components/Toolbar";
 import TicketsList from "./components/TicketsList";
 
 function App() {
   return (
-    <Box
-      sx={{
-        padding: "24px",
-        "& > .logo": { margin: { xs: "0 0 24px", md: "24px 0 48px" } },
-      }}
-    >
-      <Logo />
+    <Box sx={{ padding: "24px" }}>
+      <Header />
       <Box
+        component="main"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },

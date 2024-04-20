@@ -9,12 +9,21 @@ type LocationProps = {
 
 const Location: React.FC<LocationProps> = ({ type, location }) => {
   const { time, origin, name, formatDate } = location;
+
+  let locationLabel = "";
   let place = "";
-  if (type === "departure") place = `${origin}, ${name}`;
-  else if (type === "arrival") place = `${name}, ${origin}`;
+  if (type === "departure") {
+    locationLabel = "Отправление";
+    place = `${origin}, ${name}`;
+  } else if (type === "arrival") {
+    locationLabel = "Прибытие";
+    place = `${name}, ${origin}`;
+  }
 
   return (
     <Box
+      component="div"
+      aria-label={locationLabel}
       sx={{
         display: "flex",
         flexDirection: "column",

@@ -6,6 +6,7 @@ const TicketsList: React.FC = () => {
   const tickets = useTickets();
   return (
     <Box
+      component="section"
       sx={{
         "& > .ticket": { marginBottom: "24px" },
         "& > .ticket:last-child": { marginBottom: 0 },
