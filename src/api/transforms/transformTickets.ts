@@ -1,3 +1,4 @@
+import { formatDate } from "@/utils/tickets";
 import { Ticket } from "@/types";
 
 type JSONTicket = {
@@ -24,12 +25,14 @@ function transformTicket(json: JSONTicket): Ticket {
       origin: json.origin,
       name: json.origin_name,
       date: json.departure_date,
+      formatDate: formatDate(json.departure_date),
       time: json.departure_time,
     },
     arrival: {
       origin: json.destination,
       name: json.destination_name,
       date: json.arrival_date,
+      formatDate: formatDate(json.arrival_date),
       time: json.arrival_time,
     },
     price: json.price,

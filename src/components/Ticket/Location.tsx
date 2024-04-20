@@ -8,7 +8,7 @@ type LocationProps = {
 };
 
 const Location: React.FC<LocationProps> = ({ type, location }) => {
-  const { time, origin, name, date } = location;
+  const { time, origin, name, formatDate } = location;
   let place = "";
   if (type === "departure") place = `${origin}, ${name}`;
   else if (type === "arrival") place = `${name}, ${origin}`;
@@ -31,7 +31,7 @@ const Location: React.FC<LocationProps> = ({ type, location }) => {
         {place}
       </Typography>
       <Typography sx={{ fontSize: "0.825rem", color: grey[600] }} component="p">
-        {date}
+        {formatDate}
       </Typography>
     </Box>
   );
