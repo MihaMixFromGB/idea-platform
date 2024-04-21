@@ -5,7 +5,6 @@ import { useCurrency } from "@/hooks";
 import { convertCurrency } from "@/utils/currency";
 import { Ticket as TTicket } from "@/types/Ticket";
 import TransferInfo from "./TransferInfo";
-import TurkishAirlinesLogo from "@/assets/icons/TurkishAirlines.png";
 
 type TicketProps = {
   ticket: TTicket;
@@ -31,7 +30,12 @@ const Ticket: React.FC<TicketProps> = ({ ticket }) => {
           borderRight: "1px solid #eeeeee",
         }}
       >
-        <img width={100} src={TurkishAirlinesLogo} alt="Turkish Airlines" />
+        <img
+          srcSet="/icons/TurkishAirlines.webp"
+          src="/icons/TurkishAirlines.png"
+          width={100}
+          alt="Turkish Airlines"
+        />
         <Button
           sx={{
             marginTop: "16px",

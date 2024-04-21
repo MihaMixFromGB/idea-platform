@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import logo from "@/assets/icons/logo.png";
 
 const Logo: React.FC = () => {
   return (
@@ -7,7 +6,13 @@ const Logo: React.FC = () => {
       className="logo"
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      <img width={64} src={logo} alt="a booking company" />
+      <img
+        srcSet="/icons/logo.webp"
+        src="/icons/logo.png"
+        width={64}
+        alt="a booking company"
+        aria-hidden
+      />
     </Box>
   );
 };
